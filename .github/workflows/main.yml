@@ -22,6 +22,8 @@ jobs:
         run: poetry install
       - name: Run tests
         run: poetry run coverage run --branch -m pytest
+      - name: Run pylint
+        run: poetry run pylint
       - name: Coverage report
         run: poetry run coverage xml
       - name: Send Coverage report to Codecov
